@@ -1,0 +1,222 @@
+.geomart-search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+}
+
+.geomart-search-results-inner {
+    padding: 4px 0;
+    position: relative;
+    min-height: 150px;
+}
+
+.geomart-search-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.geomart-search-item:last-child {
+    border-bottom: none;
+}
+
+.geomart-search-item:hover {
+    background-color: #f8f9fa;
+}
+
+.geomart-search-item-image {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.geomart-search-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.geomart-search-item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.geomart-search-item-title {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.geomart-search-item-sku {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+.geomart-search-item-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #589dab;
+}
+
+.geomart-search-item-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.price {
+    font-weight: 600;
+    color: #2c5282;
+}
+
+.stock-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.stock-status.in-stock {
+    background-color: #e6f4ea;
+    color: #1e7e34;
+}
+
+.stock-status.out-of-stock {
+    background-color: #feeced;
+    color: #dc3545;
+}
+
+.sku {
+    color: #666;
+    font-size: 12px;
+}
+
+.geomart-view-all {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-top: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.geomart-view-all:hover {
+    background-color: #e9ecef;
+}
+
+.geomart-view-all-count {
+    display: inline-block;
+    background: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+
+.geomart-no-results {
+    padding: 48px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    gap: 16px;
+}
+
+/* Custom Scrollbar */
+.geomart-search-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.geomart-search-results::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+.geomart-search-results::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 8px;
+}
+
+.geomart-search-results::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .geomart-search-results {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        border-radius: 0;
+        max-height: none;
+    }
+
+    .geomart-search-item {
+        padding: 10px;
+    }
+
+    .geomart-search-item-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .geomart-search-item-title {
+        font-size: 14px;
+    }
+
+    .geomart-search-item-meta {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .geomart-search-results-inner {
+        min-height: 30vh;
+    }
+}
+
+/* Hide scrollbar on mobile */
+.geomart-search-results::-webkit-scrollbar {
+    display: none;
+}
+    
+.geomart-search-results {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body.geomart-search-active {
+    overflow: hidden;
+}

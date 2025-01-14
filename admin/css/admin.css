@@ -1,0 +1,73 @@
+.geomart-tools-wrap {
+    margin: 10px 20px 0 2px;
+}
+
+.geomart-tools-container {
+    display: flex;
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.geomart-tools-tabs {
+    width: 200px;
+    background: #f9f9f9;
+    border-right: 1px solid #ccd0d4;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.geomart-tools-tabs .geomart-tab {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #666;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.geomart-tools-tabs .geomart-tab:hover {
+    background: #fff;
+    color: #333;
+}
+
+.geomart-tools-tabs .geomart-tab.active {
+    background: #fff;
+    color: #0073aa;
+    font-weight: 600;
+    box-shadow: inset 3px 0 0 #0073aa;
+    margin-right: -1px;
+}
+
+.geomart-tools-content {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+}
+
+.geomart-tools-content h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.geomart-tools-content .form-table th {
+    padding: 20px 10px 20px 0;
+    width: 200px;
+}
+
+.geomart-tools-content .form-table td {
+    padding: 15px 10px;
+}
+
+.geomart-tools-content input[type="color"] {
+    width: 65px;
+    height: 30px;
+    padding: 2px;
+}
+
+.geomart-tools-content input[type="number"] {
+    width: 65px;
+}

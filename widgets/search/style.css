@@ -1,0 +1,139 @@
+.geomart-search-widget {
+    position: relative;
+    max-width: 100%;
+}
+
+.geomart-search-container {
+    position: relative;
+    width: 100%;
+}
+
+.geomart-search-input {
+    width: 100%;
+    padding: 15px 45px 15px 20px;
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.geomart-search-input:focus {
+    border-color: #4054b2;
+    box-shadow: 0 0 0 3px rgba(64, 84, 178, 0.1);
+}
+
+.geomart-search-results {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.geomart-search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s ease;
+}
+
+.geomart-search-result-item:last-child {
+    border-bottom: none;
+}
+
+.geomart-search-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.geomart-search-result-image {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.geomart-search-result-info {
+    flex: 1;
+}
+
+.geomart-search-result-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.geomart-search-result-price {
+    color: #4054b2;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.geomart-no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+}
+
+/* Loading Animation */
+.geomart-search-loading {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.geomart-search-loading::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #4054b2;
+    border-top-color: transparent;
+    animation: geomart-spin 0.8s linear infinite;
+}
+
+@keyframes geomart-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Scrollbar Styling */
+.geomart-search-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.geomart-search-results::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.geomart-search-results::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.geomart-search-results::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

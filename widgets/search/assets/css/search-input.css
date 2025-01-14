@@ -1,0 +1,191 @@
+.geomart-search-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.geomart-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.geomart-search-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.geomart-search-input {
+    width: 100%;
+    padding: 12px 40px 12px 40px;
+    border: 2px solid #e2e2e2;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.geomart-search-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.1);
+}
+
+.geomart-search-input:focus + .geomart-search-icon {
+    color: #4a90e2;
+}
+
+.geomart-search-loading,
+.geomart-search-close {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.geomart-search-loading {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #4a90e2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.geomart-search-close {
+    display: none;
+}
+
+.geomart-search-close:before,
+.geomart-search-close:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 16px;
+    background-color: #999;
+    top: 50%;
+    left: 50%;
+}
+
+.geomart-search-close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.geomart-search-close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.geomart-search-close:hover:before,
+.geomart-search-close:hover:after {
+    background-color: #4a90e2;
+}
+
+.geomart-search-input::placeholder {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.geomart-spinner-ring {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-top-color: #64748b;
+    border-radius: 50%;
+    animation: geomart-spin 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.geomart-spinner-ring::before,
+.geomart-spinner-ring::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.geomart-spinner-ring::before {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-top-color: rgba(100, 116, 139, 0.8);
+    animation: geomart-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.geomart-spinner-ring::after {
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-top-color: rgba(100, 116, 139, 0.6);
+    animation: geomart-spin 1.6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.geomart-loading-text {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes geomart-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 767px) {
+    body.geomart-search-active {
+        overflow: hidden;
+    }
+
+    body.geomart-search-active .geomart-search-input-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100000;
+        background: #fff;
+        padding: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    body.geomart-search-active .geomart-search-input {
+        padding-right: 40px;
+    }
+
+    body.geomart-search-active .geomart-search-close {
+        width: 24px;
+        height: 24px;
+        right: 16px;
+    }
+
+    body.geomart-search-active .geomart-search-close:before,
+    body.geomart-search-active .geomart-search-close:after {
+        height: 20px;
+        width: 2px;
+    }
+
+    .geomart-search-icon {
+        left: 16px;
+    }
+
+    .geomart-search-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
