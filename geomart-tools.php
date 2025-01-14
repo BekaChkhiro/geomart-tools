@@ -50,23 +50,9 @@ function geomart_tools_widgets_init() {
 // Enqueue widget styles
 function geomart_tools_enqueue_styles() {
     wp_enqueue_style(
-        'geomart-search-main',
-        GEOMART_TOOLS_URL . 'widgets/search/assets/css/main.css',
+        'geomart-search-widget',
+        GEOMART_TOOLS_URL . 'widgets/search/style.css',
         [],
-        '1.0.0'
-    );
-
-    wp_enqueue_style(
-        'geomart-search-input',
-        GEOMART_TOOLS_URL . 'widgets/search/assets/css/search-input.css',
-        ['geomart-search-main'],
-        '1.0.0'
-    );
-
-    wp_enqueue_style(
-        'geomart-search-results',
-        GEOMART_TOOLS_URL . 'widgets/search/assets/css/search-results.css',
-        ['geomart-search-main'],
         '1.0.0'
     );
 }
