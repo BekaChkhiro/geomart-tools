@@ -47,4 +47,29 @@ function geomart_tools_widgets_init() {
     \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \GeoMart_Text_Editor());
 }
 
+// Enqueue widget styles
+function geomart_tools_enqueue_styles() {
+    wp_enqueue_style(
+        'geomart-search-main',
+        GEOMART_TOOLS_URL . 'widgets/search/assets/css/main.css',
+        [],
+        '1.0.0'
+    );
+
+    wp_enqueue_style(
+        'geomart-search-input',
+        GEOMART_TOOLS_URL . 'widgets/search/assets/css/search-input.css',
+        ['geomart-search-main'],
+        '1.0.0'
+    );
+
+    wp_enqueue_style(
+        'geomart-search-results',
+        GEOMART_TOOLS_URL . 'widgets/search/assets/css/search-results.css',
+        ['geomart-search-main'],
+        '1.0.0'
+    );
+}
+
 add_action('init', 'geomart_tools_widgets_init');
+add_action('wp_enqueue_scripts', 'geomart_tools_enqueue_styles');
